@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="">
+
+<head>
+    <meta charset="UTF-8">
+    <title>A Love That Grows — M 💙 T</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    
+    <!--爱心-->
+    <meta charset="utf-8">
+	<title>霓虹爱心</title>
+	<meta name="language" content="zh-CN">
+	<meta name="github" content="https://github.com/sun0225SUN/Awesome-Love-Code">
+	<meta name="describe" content="收集不易，您的star是我坚持的动力，同时也欢迎各位PR哦! ">
+	<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/sun0225SUN/photos/img/20210715233345.png">
+	<link rel="stylesheet" href="css/styles.css">
+    <!--爱心-->
+
+</head>
+
+<body>
+    <!--表单层-->
+    <div class="love_div">
+        <!--提示文字-->
+        
+        <form onsubmit="return false">
+            <input type="password" name="love_text" class="love_text" placeholder="Type 'koko' and I'll surprise you！">
+            <input type="button" class="love_btn" value="Submit">
+        </form>
+    </div>
+    <!--背景音乐层（若要修改，直接替换音频地址即可，即src="音频地址"）-->
+    <audio autoplay="autoplay" id="bgm" loop="loop" src="Yar Tat Pan.mp3">
+        浏览器不支持播放此音乐！
+    </audio>
+    <script type="text/javascript" class="autoinsert" src="js/jquery-1.2.6.min.js"></script>
+    <script src="js/snowfall.jquery.js"></script>
+    <script src="js/love.js"></script>
+    <script>
+        $(function () {
+            showFlower();/*加载落花效果*/
+            initImg();
+        })
+    </script>
+
+    <canvas id="canvas" width="1400" height="600"></canvas> <!--爱心-->
+</body>
+
+
+<script src="js/script.js"></script> <!--爱心-->
+
+</html>

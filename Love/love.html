@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>I Love You</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--动态显示文字层-->
+<div class="love_you"></div>
+<!-- 遮罩层-->
+<div class="mask"></div>
+<!--背景图片层-->
+<img class="bgImg" src="images/1.jpg">
+<!--背景音乐层（若要修改，直接替换音频地址即可，即src="音频地址"）-->
+<audio autoplay="autoplay" id="bgm"
+       loop="loop" src="Min nal.mp3">
+    浏览器不支持播放此音乐！
+</audio>
+<!--爱心墙层-->
+<div class="love_heart">
+</div>
+<script type="text/javascript" class="autoinsert" src="js/jquery-1.2.6.min.js"></script>
+<script src="js/love.js"></script>
+<script src="js/snowfall.jquery.js"></script>
+<script>
+    $(function () {
+            /*初始化*/
+            init();
+        })
+    </script>
+</body>
+</html>

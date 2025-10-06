@@ -1,0 +1,93 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body id="bgc">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<title>Ko Ko Chit Sone Lay</title>
+	<link rel="icon" type="image/x-icon" href="https://i.loli.net/2021/06/03/lFg2V4WUcmkB98G.png">
+	<meta name="language" content="zh-CN">
+	<meta name="title" content="小孙同学">
+	<meta name="github" content="https://github.com/sun0225SUN/Awesome-Love-Code">
+	<meta name="describe" content="收集不易，您的star是我坚持的动力，同时也欢迎各位PR哦! ">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="js/js.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<div class="mb-box">
+		<div class="bb">
+
+			<h2>ချစ်ဆုံးပူတူးလေးအတွက်</h2>
+			<div class="bb_text">
+				<div id="code">
+					အချစ်စစ်မှန်ရင် နှလုံးသားကို လိမ်လို့မရဘူးတဲ့..မလွမ်းနဲ့ပြောလည်း လွမ်းမှာပဲ..မချစ်နဲ့ပြောလည်း ချစ်မှာပဲ..တကယ်ကိုလည်း ချစ်ချစ်ပြောလိုက်တဲ့စကားလုံးတိုင်းကို မြတ်မြတ်နိုးနိုးနဲ့ချစ်တာ💞ချစ်ချစ်နဲ့အနေဝေးနေတဲ့အခိုက်တန့်တွေမှာလည်း ချစ်ချစ်ကိုလွမ်းတဲ့ခံစားချက်အပြင် ဘာစကားမှ ရှာမရအောင် ပျောက်နေတတ်တယ်...........ကိုကို့နှလုံးသားရဲ့ စေညွှန်ရာဟာ ချစ်ချစ်ဖြစ်နေခဲ့တာတော့ ကိုယ့်အတွက် ဘုရားပေးတဲ့ဆုလာဘ်တစ်ပါးပေါ့..<br>ရာသီတွေနှစ်တွေဘယ်လိုပြောင်းလဲပါစေ မပြောင်းလဲတဲ့ သစ္စာတရားနဲ့ သက်ဆုံးတိုင်ချစ်နေမယ် ကောင်မလေးရယ်...<br>တစ်ခုပဲ..ချစ်ချစ်ဆုပ်ကိုင်ထားတဲ့ ကိုယ့်လက်ကို ဘယ်တော့မှ မလွှတ်လိုက်ပါနဲ့..ကိုယ်မင်းလက်ကိုဆွဲပီး ဟိုး... သံသရာဆုံးထိ အတူသွားကြတာပေါ့ ချစ်ဆုံးလေး💝
+				</div>
+			</div>
+			<p class="bb_myname">
+				ချစ်ချစ်ကိုကို<br>
+			</p>
+
+		</div>
+	</div>
+
+	<script>
+		Element.prototype.typewriter = function (a) {
+			var d = this,
+				c = d.innerHTML,
+				b = 0;
+			d.innerHTML = "";
+			var e = setInterval(function () {
+				var f = c.substr(b, 1);
+				if (f == "<") {
+					b = c.indexOf(">", b) + 1
+				} else {
+					b++
+				}
+				d.innerHTML = c.substring(0, b) + (b & 1 ? "_" : "");
+				if (b >= c.length) {
+					clearInterval(e)
+				}
+			}, 150)
+			return this
+
+		}
+		document.getElementById("code").typewriter();
+	</script>
+	<audio id="main_audio" autoplay="autoplay" preload="auto" loop="">
+		<source src="Yar Tat Pan.mp3" type="audio/mpeg">
+	</audio>
+	<script type="text/javascript" src="js/count.js"></script>
+
+
+	<script type="text/javascript" async="" src="js/su.js"></script>
+
+	</body>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+<body>
+  <h1></h1>
+  <audio id="main_audio" preload="auto" loop>
+    <source src="Yar Tat Pan.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    const audio = document.getElementById('main_audio');
+
+    function playAudio() {
+      audio.play().then(() => {
+        console.log('播放成功');
+        document.removeEventListener('click', playAudio);
+      }).catch((e) => {
+        console.error('播放失败', e);
+      });
+    }
+
+    document.addEventListener('click', playAudio);
+  </script>
+</body>
+</html>
