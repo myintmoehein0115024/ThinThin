@@ -2,8 +2,6 @@
   "use strict";
 
   const START_DATE = new Date(2024, 2, 20);
-  const UNLOCK_KEY = "thinthin_story_unlocked_at";
-  const UNLOCK_DURATION = 15 * 60 * 1000;
   const counter = document.getElementById("runtime_span");
   const music = document.getElementById("bg-music");
   const musicToggle = document.getElementById("music-toggle");

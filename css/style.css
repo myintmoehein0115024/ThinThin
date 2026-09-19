@@ -1554,3 +1554,69 @@ body { min-height: 100svh; }
   .timeline-item h3{font-size:11px;margin-top:4px;}
 }
 @media(prefers-reduced-motion:reduce){.timeline-dot{box-shadow:none;}}
+
+/* ===== Homepage V6 — soft living romance ===== */
+.home-love-note{
+  width:min(100%, 360px);
+  margin:-2px auto 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:6px 12px;
+  box-sizing:border-box;
+  border-radius:999px;
+  background:rgba(255,255,255,.34);
+  border:1px solid rgba(255,255,255,.56);
+  color:#9a8395;
+  font-size:9px;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  box-shadow:0 5px 16px rgba(110,94,140,.04), inset 1px 1px 2px rgba(255,255,255,.75);
+}
+.home-love-note b{
+  color:rgba(209,109,159,.8);
+  font:14px/1 Georgia,serif;
+  animation:homeHeartBreath 2.4s ease-in-out infinite;
+}
+@keyframes homeHeartBreath{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+
+.story-timeline{isolation:isolate;}
+.timeline-float-heart{
+  position:absolute;
+  z-index:0;
+  pointer-events:none;
+  color:rgba(205,121,163,.24);
+  font-family:Georgia,serif;
+  animation:timelineDrift 5.5s ease-in-out infinite;
+}
+.timeline-float-heart.heart-a{left:18px;top:24px;font-size:16px;animation-delay:-1.2s;}
+.timeline-float-heart.heart-b{right:26px;bottom:18px;font-size:12px;animation-delay:-3.1s;}
+.timeline-float-heart.heart-c{right:18px;top:46px;font-size:9px;animation-delay:-4.2s;}
+@keyframes timelineDrift{0%,100%{transform:translate3d(0,0,0) rotate(-4deg);opacity:.45}50%{transform:translate3d(0,-5px,0) rotate(4deg);opacity:.85}}
+.timeline-item{transition:transform .28s ease, box-shadow .28s ease, background .28s ease;}
+.timeline-item:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(112,91,135,.06);background:rgba(255,255,255,.62);}
+.timeline-item.timeline-now{position:relative;overflow:hidden;}
+.timeline-item.timeline-now::after{
+  content:'';
+  position:absolute;
+  inset:auto -20% -30% auto;
+  width:95px;height:95px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(235,166,198,.18),transparent 70%);
+  animation:nowGlow 3.8s ease-in-out infinite;
+}
+@keyframes nowGlow{0%,100%{transform:scale(.9);opacity:.6}50%{transform:scale(1.15);opacity:1}}
+.timeline-now .timeline-dot{animation:nowDot 2.8s ease-in-out infinite;}
+@keyframes nowDot{0%,100%{box-shadow:0 0 0 4px rgba(255,255,255,.5),0 4px 10px rgba(179,123,159,.10)}50%{box-shadow:0 0 0 7px rgba(222,151,185,.12),0 5px 16px rgba(179,123,159,.15)}}
+
+@media (max-width:600px){
+  .home-love-note{margin-bottom:10px;font-size:8px;gap:7px;padding:6px 9px;}
+  .timeline-float-heart.heart-a{left:12px;top:18px;}
+  .timeline-float-heart.heart-b{right:14px;bottom:12px;}
+  .timeline-float-heart.heart-c{right:12px;top:38px;}
+}
+@media (prefers-reduced-motion: reduce){
+  .home-love-note b,.timeline-float-heart,.timeline-item.timeline-now::after,.timeline-now .timeline-dot{animation:none!important;}
+  .timeline-item{transition:none;}
+}
