@@ -1,0 +1,348 @@
+:root{
+  --ink:#55465f;
+  --muted:#816f8a;
+  --accent:#c37eaa;
+  --accent-2:#9b82d3;
+  --glass:rgba(255,255,255,.82);
+}
+*{box-sizing:border-box}
+html,body{min-height:100%;margin:0}
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  color:var(--ink);
+  font-family:"Noto Sans Myanmar","Myanmar Text","Segoe UI",system-ui,sans-serif;
+  background:
+    radial-gradient(circle at 12% 12%,rgba(255,191,221,.32),transparent 28%),
+    radial-gradient(circle at 88% 18%,rgba(194,188,255,.32),transparent 30%),
+    linear-gradient(135deg,#e9e9ff 0%,#f9effb 48%,#e9e8ff 100%);
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;
+  background:url('../img/bg.jpg') center/cover no-repeat;opacity:.16;mix-blend-mode:soft-light;
+}
+body:after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-3;
+  background:linear-gradient(180deg,rgba(244,243,255,.72),rgba(255,250,255,.72));
+}
+.ambient{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+.heart{position:absolute;color:rgba(183,139,207,.22);font-family:Georgia,serif;animation:float 9s ease-in-out infinite}
+.h1{left:8%;top:19%;font-size:92px}.h2{right:9%;bottom:13%;font-size:84px;animation-delay:2s}.h3{left:45%;top:6%;font-size:34px;animation-delay:4s}
+.bubble{position:absolute;width:28px;height:28px;border:2px solid rgba(198,145,212,.34);border-radius:50%;animation:drift 12s linear infinite}
+.b1{left:14%;top:8%}.b2{left:31%;top:17%;width:20px;height:20px}.b3{left:73%;top:13%;width:34px;height:34px}.b4{right:12%;top:33%;width:22px;height:22px}.b5{left:20%;bottom:21%;width:38px;height:38px}.b6{left:51%;bottom:11%;width:24px;height:24px}.b7{right:28%;bottom:24%;width:34px;height:34px}.b8{right:8%;bottom:38%;width:18px;height:18px}.b9{left:40%;top:42%;width:18px;height:18px}.b10{right:42%;top:26%;width:26px;height:26px}
+.page-shell{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:clamp(28px,5vh,64px) 20px 110px}
+.letter-card{
+  position:relative;width:min(780px,100%);padding:clamp(42px,6vw,68px) clamp(28px,6vw,70px) clamp(34px,5vw,56px);
+  border:1px solid rgba(255,255,255,.92);border-radius:34px;
+  background:linear-gradient(145deg,rgba(255,255,255,.9),rgba(252,247,255,.78));
+  box-shadow:0 28px 90px rgba(99,75,130,.16),inset 0 1px 0 rgba(255,255,255,.98);
+  backdrop-filter:blur(18px) saturate(120%);-webkit-backdrop-filter:blur(18px) saturate(120%);
+}
+.letter-card:before{content:"";position:absolute;inset:12px;border:1px solid rgba(195,126,170,.11);border-radius:26px;pointer-events:none}
+.card-heart{position:absolute;top:-25px;left:50%;transform:translateX(-50%);display:grid;place-items:center;width:66px;height:66px;border-radius:50%;background:rgba(255,255,255,.9);border:1px solid rgba(195,126,170,.2);box-shadow:0 10px 30px rgba(154,119,180,.14);font:44px/1 Georgia,serif;color:#c77eac}
+.eyebrow{text-align:center;letter-spacing:3px;font-size:12px;font-weight:800;color:#9a7f98;margin-bottom:12px}
+h1{margin:0;text-align:center;font-family:Georgia,"Times New Roman",serif;font-size:clamp(27px,5vw,43px);line-height:1.25;color:#7d4f79;font-weight:800}
+.divider{display:flex;align-items:center;gap:14px;justify-content:center;margin:22px auto 26px;color:#c681aa}.divider:before,.divider:after{content:"";height:1px;width:min(150px,25%);background:linear-gradient(90deg,transparent,rgba(195,126,170,.35))}.divider:after{transform:scaleX(-1)}
+.letter-body{font-size:clamp(16px,2.1vw,19px);line-height:2.02;color:#4f4757;font-weight:600;text-align:left}
+.letter-body p{margin:0 0 20px;text-wrap:pretty}.letter-body p:last-child{margin-bottom:0}
+.typewriter-source:after{content:"_";animation:blink .75s step-end infinite;color:#c27eaa}
+.signature{margin-top:32px;padding:22px 18px 8px;text-align:center;color:#8d7187;border-top:1px solid rgba(195,126,170,.16);display:flex;flex-direction:column;gap:5px;font-size:14px}.signature strong{font-family:Georgia,"Times New Roman",serif;color:#b1699d;font-size:21px}.signature span:last-child{font-size:13px;letter-spacing:.4px}
+.back-home,.music-toggle{position:fixed;z-index:20;bottom:max(18px,env(safe-area-inset-bottom));display:inline-flex;align-items:center;gap:9px;min-height:48px;padding:10px 16px;border:1px solid rgba(255,255,255,.95);border-radius:999px;background:rgba(255,255,255,.82);color:#6f5b78;text-decoration:none;font:700 14px/1 "Segoe UI",system-ui,sans-serif;box-shadow:0 12px 32px rgba(100,77,133,.16),inset 0 1px 0 rgba(255,255,255,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:.22s ease}
+.back-home{left:max(16px,env(safe-area-inset-left))}.music-toggle{right:max(16px,env(safe-area-inset-right));cursor:pointer;color:#7a6285}.back-home:hover,.music-toggle:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(100,77,133,.22)}.back-home:active,.music-toggle:active{transform:scale(.97)}
+.back-icon,.music-icon{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:rgba(255,255,255,.78);color:#c27daa;font-size:18px}.music-icon{font-family:Georgia,serif}.music-toggle.playing .music-icon{animation:pulse 1.1s ease-in-out infinite}.music-toggle.playing{color:#9a6388}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-22px) rotate(5deg)}}
+@keyframes drift{0%{transform:translateY(15vh) translateX(0);opacity:.1}30%{opacity:.55}100%{transform:translateY(-115vh) translateX(80px);opacity:0}}
+@keyframes blink{50%{opacity:0}}@keyframes pulse{50%{transform:scale(1.15)}}
+@media(max-width:700px){
+  .page-shell{align-items:flex-start;padding:48px 12px 96px}
+  .letter-card{width:100%;border-radius:27px;padding:45px 22px 32px;box-shadow:0 18px 55px rgba(99,75,130,.14)}
+  .letter-card:before{inset:8px;border-radius:20px}
+  .card-heart{width:58px;height:58px;top:-21px;font-size:38px}
+  .eyebrow{font-size:10px;letter-spacing:2.2px}
+  h1{font-size:29px}
+  .letter-body{font-size:16px;line-height:1.9}
+  .letter-body p{margin-bottom:17px}
+  .signature{margin-top:26px}
+  .back-home,.music-toggle{min-height:46px;padding:9px 13px;font-size:13px}
+  .back-home{left:12px}.music-toggle{right:12px}.music-text{display:none}
+  .h1{left:-2%;top:15%;font-size:68px}.h2{right:-2%;bottom:14%;font-size:66px}
+}
+@media(max-width:390px){h1{font-size:25px}.letter-card{padding-left:18px;padding-right:18px}.letter-body{font-size:15px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
+
+/* Final responsive polish */
+.music-toggle{min-width:132px;justify-content:center}
+.music-toggle.playing{background:rgba(255,248,252,.92);border-color:rgba(195,126,170,.28)}
+@media(max-width:700px){.music-toggle{min-width:48px;width:48px;justify-content:center}.music-toggle .music-text{display:none}}
+
+
+/* Romantic connected-writing layer */
+.letter-body p{
+  position:relative;
+  min-height:1.2em;
+}
+.letter-body p.typing:after{
+  content:"";
+  display:inline-block;
+  width:2px;
+  height:1em;
+  margin-left:4px;
+  vertical-align:-.12em;
+  border-radius:2px;
+  background:#c37eaa;
+  animation:writingCursor .72s steps(1,end) infinite;
+  box-shadow:0 0 10px rgba(195,126,170,.28);
+}
+.letter-body p.typed{
+  animation:softSettle .7s cubic-bezier(.2,.75,.25,1) both;
+}
+.romance-note{
+  height:58px;
+  margin:22px auto 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+  color:#cf83ad;
+  opacity:0;
+  transform:translateY(10px) scale(.96);
+  pointer-events:none;
+}
+.romance-note.show{
+  opacity:.78;
+  transform:translateY(0) scale(1);
+  transition:opacity 1.2s ease, transform 1.2s cubic-bezier(.2,.75,.25,1);
+}
+.romance-note span{
+  display:block;
+  font-family:Georgia,serif;
+  font-size:22px;
+  animation:romanceFloat 3.6s ease-in-out infinite;
+  text-shadow:0 0 18px rgba(207,131,173,.35);
+}
+.romance-note span:nth-child(2){font-size:13px;animation-delay:.45s}
+.romance-note span:nth-child(3){font-size:30px;animation-delay:.9s}
+.romance-note span:nth-child(4){font-size:12px;animation-delay:1.35s}
+.romance-note span:nth-child(5){font-size:20px;animation-delay:1.8s}
+.signature{
+  position:relative;
+  overflow:visible;
+  opacity:0;
+  transform:translateY(10px);
+}
+.signature.show{
+  opacity:1;
+  transform:translateY(0);
+  transition:opacity 1.1s ease, transform 1.1s cubic-bezier(.2,.75,.25,1);
+}
+.signature:before,.signature:after{
+  content:"♡";
+  position:absolute;
+  color:rgba(195,126,170,.28);
+  font-family:Georgia,serif;
+  animation:orbitHeart 5s ease-in-out infinite;
+}
+.signature:before{left:8%;top:34px;font-size:18px}
+.signature:after{right:8%;top:14px;font-size:14px;animation-delay:1.4s}
+@keyframes writingCursor{50%{opacity:0}}
+@keyframes softSettle{0%{opacity:.65;transform:translateY(5px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes romanceFloat{0%,100%{transform:translateY(2px) scale(.96) rotate(-4deg)}50%{transform:translateY(-9px) scale(1.08) rotate(4deg)}}
+@keyframes orbitHeart{0%,100%{transform:translateY(0) rotate(-8deg);opacity:.25}50%{transform:translateY(-10px) rotate(8deg);opacity:.7}}
+@media(max-width:700px){
+  .romance-note{gap:16px;height:48px;margin-top:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  .letter-body p.typing:after{animation:none}
+  .letter-body p.typed,.romance-note,.signature{animation:none;transition:none}
+  .romance-note.show,.signature.show{opacity:1;transform:none}
+  .romance-note span,.signature:before,.signature:after{animation:none}
+}
+
+
+/* Little wish ending — a quiet final romantic moment */
+.wish-button{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  margin:18px auto 0;
+  padding:10px 18px;
+  border:1px solid rgba(195,126,170,.18);
+  border-radius:999px;
+  background:rgba(255,255,255,.58);
+  color:#8b6a86;
+  font:700 13px/1 "Segoe UI",system-ui,sans-serif;
+  box-shadow:0 8px 24px rgba(100,77,133,.08);
+  cursor:pointer;
+  opacity:0;
+  transform:translateY(7px) scale(.98);
+  transition:opacity .9s ease,transform .9s cubic-bezier(.2,.75,.25,1),background .25s ease,box-shadow .25s ease;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+}
+.wish-button.show{opacity:1;transform:none}
+.wish-button:hover{background:rgba(255,255,255,.8);box-shadow:0 12px 30px rgba(100,77,133,.13);transform:translateY(-1px)}
+.wish-button:active{transform:scale(.97)}
+.wish-heart{font:20px/1 Georgia,serif;color:#c37eaa;transition:transform .35s ease}
+.wish-button.opened .wish-heart{transform:scale(1.18);animation:tinyHeartbeat 1.1s ease-in-out infinite}
+.wish-note{
+  position:relative;
+  margin:14px auto 0;
+  max-width:590px;
+  padding:19px 22px 20px;
+  text-align:center;
+  border:1px solid rgba(195,126,170,.13);
+  border-radius:22px;
+  background:linear-gradient(145deg,rgba(255,250,254,.82),rgba(249,245,255,.72));
+  box-shadow:0 12px 34px rgba(100,77,133,.09),inset 0 1px rgba(255,255,255,.9);
+  color:#80677e;
+  opacity:0;
+  transform:translateY(9px) scale(.98);
+  overflow:hidden;
+}
+.wish-note.show{opacity:1;transform:none;animation:wishReveal .9s cubic-bezier(.2,.75,.25,1) both}
+.wish-note:before{content:"♡";position:absolute;left:14px;top:10px;color:rgba(195,126,170,.18);font:24px Georgia,serif}
+.wish-note:after{content:"✦";position:absolute;right:17px;bottom:10px;color:rgba(155,130,211,.2);font-size:14px;animation:twinkle 2.8s ease-in-out infinite}
+.wish-label{display:block;font-size:11px;letter-spacing:1.7px;text-transform:uppercase;color:#a17e9b;font-weight:800}
+.wish-note p{margin:9px auto 7px;font-family:Georgia,"Times New Roman",serif;font-size:17px;line-height:1.65;color:#755c74}
+.wish-note strong{font-size:13px;color:#b1699d;letter-spacing:.3px}
+@keyframes wishReveal{0%{opacity:0;transform:translateY(10px) scale(.97)}100%{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes tinyHeartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.8) rotate(0)}50%{opacity:.85;transform:scale(1.15) rotate(12deg)}}
+
+/* Larger, calmer mobile composition */
+@media(max-width:700px){
+  .page-shell{padding:38px 10px 100px}
+  .letter-card{padding:48px 20px 30px}
+  .letter-body{font-size:clamp(16px,4.3vw,18px);line-height:1.95}
+  .letter-body p{margin-bottom:20px}
+  .romance-note{height:48px}
+  .wish-button{margin-top:14px;padding:11px 16px;font-size:12px}
+  .wish-note{padding:17px 17px 18px;border-radius:19px}
+  .wish-note p{font-size:15px;line-height:1.6}
+  .back-home,.music-toggle{bottom:max(14px,env(safe-area-inset-bottom));}
+}
+@media(max-width:390px){
+  .letter-card{padding-left:17px;padding-right:17px}
+  .letter-body{font-size:15px;line-height:1.88}
+  .wish-note p{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  .wish-button,.wish-note{transition:none;animation:none}
+  .wish-button.opened .wish-heart,.wish-note:after{animation:none}
+}
+
+/* Memory thread — the quiet little ending */
+.memory-thread{
+  position:relative;
+  max-width:620px;
+  margin:22px auto 0;
+  padding:18px 10px 4px 24px;
+  opacity:0;
+  transform:translateY(10px);
+  pointer-events:none;
+}
+.memory-thread.show{
+  opacity:1;
+  transform:none;
+  pointer-events:auto;
+  transition:opacity 1.1s ease,transform 1.1s cubic-bezier(.2,.75,.25,1);
+}
+.memory-line{
+  position:absolute;
+  left:10px;
+  top:29px;
+  bottom:39px;
+  width:1px;
+  background:linear-gradient(180deg,rgba(195,126,170,0),rgba(195,126,170,.34),rgba(155,130,211,.24),rgba(195,126,170,0));
+}
+.memory-item{position:relative;display:flex;align-items:flex-start;gap:13px;padding:0 0 16px}
+.memory-dot{
+  position:relative;z-index:1;flex:0 0 auto;display:grid;place-items:center;width:22px;height:22px;margin-left:-24px;border:1px solid rgba(195,126,170,.22);border-radius:50%;background:rgba(255,255,255,.88);color:#c37eaa;font:14px/1 Georgia,serif;box-shadow:0 5px 15px rgba(100,77,133,.08)}
+.memory-item small{display:block;font:800 9px/1.2 "Segoe UI",system-ui,sans-serif;letter-spacing:1.8px;color:#a4819b;margin-bottom:5px}
+.memory-item strong{display:block;font:600 14px/1.55 Georgia,"Times New Roman",serif;color:#765f73}
+.memory-item:nth-of-type(3) .memory-dot{color:#9b82d3}
+.memory-ending{margin-top:1px;text-align:center;font:600 13px/1.6 Georgia,"Times New Roman",serif;color:#9a7c95}
+.memory-ending em{font-style:normal;color:#b1699d}
+.memory-thread:after{
+  content:"✦  ♡  ✦";
+  display:block;
+  margin:12px auto 0;
+  text-align:center;
+  color:rgba(195,126,170,.42);
+  letter-spacing:7px;
+  font:13px/1 Georgia,serif;
+  animation:memoryTwinkle 3.8s ease-in-out infinite;
+}
+@keyframes memoryTwinkle{0%,100%{opacity:.35;transform:translateY(0)}50%{opacity:.85;transform:translateY(-2px)}}
+
+/* Tiny floating petals keep the page alive without making it busy. */
+.ambient:after,.ambient:before{
+  content:"♡";
+  position:absolute;
+  color:rgba(195,126,170,.16);
+  font:20px Georgia,serif;
+  animation:petalFloat 11s ease-in-out infinite;
+}
+.ambient:before{left:24%;bottom:7%;animation-delay:-3s}
+.ambient:after{right:25%;top:24%;font-size:15px;animation-delay:-7s}
+@keyframes petalFloat{0%,100%{transform:translate3d(0,0,0) rotate(-8deg);opacity:.15}50%{transform:translate3d(12px,-24px,0) rotate(9deg);opacity:.55}}
+
+@media(max-width:700px){
+  .memory-thread{padding-left:22px;margin-top:18px}
+  .memory-line{left:9px}
+  .memory-dot{margin-left:-22px;width:20px;height:20px;font-size:13px}
+  .memory-item strong{font-size:13px;line-height:1.5}
+  .memory-item small{font-size:8px;letter-spacing:1.5px}
+  .memory-ending{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .memory-thread.show,.memory-thread:after,.ambient:after,.ambient:before{animation:none;transition:none}
+}
+
+
+/* Romantic V11 polish — visual only */
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:9px;}
+.eyebrow-heart{font-size:16px;opacity:.65;animation:eyebrowFloat 2.8s ease-in-out infinite;}
+.eyebrow-heart:last-child{animation-delay:1.4s;}
+.after-letter{display:flex;justify-content:center;gap:14px;margin:20px 0 4px;color:#b88bb3;font-size:14px;opacity:.72;}
+.after-letter span{animation:afterLetter 2.6s ease-in-out infinite;}
+.after-letter span:nth-child(2){animation-delay:.45s;font-size:10px;}
+.after-letter span:nth-child(3){animation-delay:.9s;}
+@keyframes eyebrowFloat{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(-3px);opacity:.9}}
+@keyframes afterLetter{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-4px) scale(1.08)}}
+@media(max-width:600px){.after-letter{margin-top:16px}}
+@media(prefers-reduced-motion:reduce){.eyebrow-heart,.after-letter span{animation:none}}
+/* Romantic V12 fix — replace the broken badge with a light, text-only love mark */
+.love-mark{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  width:max-content;
+  margin:10px auto 18px;
+  color:rgba(126,99,126,.72);
+  text-align:center;
+}
+.love-mark span{
+  font:700 9px/1 "Segoe UI",system-ui,sans-serif;
+  letter-spacing:2.6px;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.love-mark b{
+  font:400 18px/1 Georgia,serif;
+  color:rgba(190,112,161,.78);
+  animation:loveMarkPulse 2.8s ease-in-out infinite;
+}
+.love-mark:before,.love-mark:after{
+  content:"";
+  width:24px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(190,146,186,.35));
+}
+.love-mark:after{transform:scaleX(-1)}
+@keyframes loveMarkPulse{0%,100%{transform:scale(1);opacity:.62}50%{transform:scale(1.14);opacity:1}}
+@media(max-width:600px){.love-mark{margin-top:6px;margin-bottom:14px;gap:6px}.love-mark span{font-size:8px;letter-spacing:2px}.love-mark:before,.love-mark:after{width:18px}}
+@media(prefers-reduced-motion:reduce){.love-mark b{animation:none}}
+

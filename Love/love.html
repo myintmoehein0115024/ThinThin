@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="manifest" href="../manifest.webmanifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Always yours">
+  <script>(function(){try{var t=Number(localStorage.getItem("thinthin_story_unlocked_at"));if(!Number.isFinite(t)||t<=0||(Date.now()-t)>=15*60*1000){localStorage.removeItem("thinthin_story_unlocked_at");window.location.replace("../index.html");}}catch(e){window.location.replace("../index.html");}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#eee7ff">
+  <title>I Love You, Chit Chit ♡</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body class="love-final-page">
+  <div class="ambient-glow ambient-glow-one" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-two" aria-hidden="true"></div>
+  <div class="final-stars" aria-hidden="true">
+    <span>✦</span><span>✧</span><span>♡</span><span>✦</span><span>♡</span><span>✧</span><span>✦</span>
+  </div>
+  <div class="romantic-hearts" aria-hidden="true"></div>
+
+  <div class="memory-header" aria-hidden="true">
+    <div class="memory-mark">M <span>♡</span> T</div>
+    <div class="memory-progress" id="memory-progress">
+      <span class="memory-progress-label">OUR LITTLE CHAPTER</span>
+      <span class="memory-progress-count" id="memory-progress-count">01 / 12</span>
+      <i><b id="memory-progress-fill"></b></i>
+    </div>
+  </div>
+
+  <div class="love_you" aria-live="polite"></div>
+  <div class="mask" aria-hidden="true"></div>
+  <img class="bgImg" src="images/1.jpg" alt="">
+
+  <section class="love_heart" aria-label="A heart made from our memories"></section>
+
+  <div class="finale-caption" aria-hidden="true">
+    <div class="finale-caption-line"><span></span><b>♡</b><span></span></div>
+    <em class="finale-caption-note">still choosing you, every day</em>
+    <strong>FOREVER, CHIT CHIT</strong>
+    <small>20 MARCH 2024 · AND STILL MY FAVORITE STORY</small>
+  </div>
+
+  <audio id="bgm" preload="auto" loop playsinline src="Min nal.mp3">
+    Your browser does not support this audio.
+  </audio>
+
+  <button id="music-control" class="love-music-control" type="button" aria-label="Pause song" aria-pressed="false">
+    <span class="music-control-icon">♫</span>
+    <span class="music-control-text">Pause Song</span>
+  </button>
+
+  <a href="../index.html" class="thinthin-return" aria-label="Back to M heart T">
+    <span class="thinthin-return-heart">♡</span>
+    <span>Back to M 💞 T</span>
+  </a>
+
+  <script src="js/jquery-1.2.6.min.js"></script>
+  <script src="js/love.js"></script>
+  <script src="js/snowfall.jquery.js"></script>
+  <script>
+    $(function(){ init(); });
+  </script>
+  <script src="../js/pwa-install.js"></script>
+</body>
+</html>

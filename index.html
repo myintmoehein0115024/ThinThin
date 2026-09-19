@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Always yours">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Always yours</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+      /* Critical opening-screen styles: keep the introduction above the existing homepage. */
+      body.intro-locked { overflow: hidden !important; }
+      #love-intro { position: fixed !important; inset: 0 !important; z-index: 99999 !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+      #love-intro.is-hidden { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+      #content { position: relative; z-index: 1; }
+    </style>
+
+    <!-- 图标 -->
+    <link rel="icon" href="icons/icon-192.png">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Always yours">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Keep the story unlocked for 15 minutes across refreshes and internal pages. -->
+    <script>
+      (function () {
+        try {
+          var key = "thinthin_story_unlocked_at";
+          var ttl = 15 * 60 * 1000;
+          var t = Number(localStorage.getItem(key));
+          if (!Number.isFinite(t) || t <= 0) {
+            t = Number(sessionStorage.getItem(key));
+          }
+          if (Number.isFinite(t) && t > 0 && (Date.now() - t) < ttl) {
+            var now = String(t);
+            localStorage.setItem(key, now);
+            sessionStorage.setItem(key, now);
+            document.documentElement.classList.add("story-unlocked");
+          } else {
+            localStorage.removeItem(key);
+            sessionStorage.removeItem(key);
+          }
+        } catch (e) {
+          try {
+            var ts = Number(sessionStorage.getItem("thinthin_story_unlocked_at"));
+            if (Number.isFinite(ts) && ts > 0 && (Date.now() - ts) < 15 * 60 * 1000) {
+              document.documentElement.classList.add("story-unlocked");
+            }
+          } catch (_) {}
+        }
+      })();
+    </script>
+
+    <!-- JS -->
+    <script src="js/index.js" defer></script>
+</head>
+
+<body class="intro-locked">
+  <section id="love-intro" class="love-intro" aria-label="A little introduction">
+    <div class="intro-glow intro-glow-one"></div>
+    <div class="intro-glow intro-glow-two"></div>
+    <div class="intro-card">
+      <div class="intro-heart" aria-hidden="true">♡</div>
+      <p class="intro-kicker">A little story, made with love</p>
+      <h1>For <span>Thin Thin Yu Hlaing</span></h1>
+      <p class="intro-date">23 August 2025 · Her 23rd Birthday</p>
+      <div class="intro-divider"><span>♥</span></div>
+      <p class="intro-message">
+        On August 23, 2025, I made this little corner of the internet as a birthday gift for the girl I love.
+        You were turning <strong>23</strong>, and I wanted to give you something that could stay with us —
+        a small place for our memories, our moments, and all the love I could not fit into a gift box.
+      </p>
+      <p class="intro-love">
+        To my <strong>Chit Chit</strong>, my <strong>Pu Tu Tu Lay</strong> —<br>
+        Thin Thin Yu Hlaing, this little world was made especially for you.
+        <br><span class="intro-sign">With all my love, always. ♡</span>
+      </p>
+      <p class="intro-made">Made on August 23, 2025 · A 23rd birthday gift · Always yours.</p>
+      <button id="enter-love" class="enter-love" type="button">
+        <span>Enter Our Story</span><b aria-hidden="true">♡</b>
+      </button>
+
+      <div id="story-date-gate" class="story-date-gate" aria-hidden="true">
+        <div class="story-date-card" role="dialog" aria-modal="true" aria-labelledby="story-date-title">
+          <div class="story-date-heart" aria-hidden="true">♡</div>
+          <p class="story-date-kicker">One little question, my love</p>
+          <h2 id="story-date-title">When did our story begin?</h2>
+          <p class="story-date-hint">Enter the date we became <em>us</em>.</p>
+          <label for="story-date-input">Our beginning</label>
+          <input id="story-date-input" type="date" lang="en-US" autocomplete="off" min="2000-01-01" max="2024-03-20" aria-label="Our beginning date" />
+          <p id="story-date-error" class="story-date-error" role="alert" aria-live="polite"></p>
+          <div class="story-date-actions">
+            <button id="story-date-back" type="button">Back</button>
+            <button id="story-date-submit" type="button">Open Our Story <span>♡</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="content">
+    <div id="ti">
+      M 💞 T
+    </div>
+    <div class="custom">
+      <div class="box">
+        <font><span id="runtime_span"></span>
+          <span id="span_dt"></span>
+        </font>
+      </div>
+    </div>
+    <div class="box-box">
+      <div class="box-top">
+        
+        
+        <a href="./heartbeat/index.html" target="_self">
+          <font class="vx"><i></i></font>
+        </a>
+      </div>
+      <div class="box love-text">
+        ❤️ Love you three thousand times ❤️</div>
+    </div>
+    <div class="main">
+      <div class="main-1">
+        <div class="box">
+          <img class="img" src="img/boy.jpg">
+            <div class="boxbox">
+    <center>
+      <font class="admin"><i></i>Ko Ko</font>
+    </center>
+  </div>
+        </div>
+      </div>
+      <div class="main-2">
+        <div class="box ju">
+          <h4>
+            <font class="zuobiao"><i></i>KutKai · Shan State</font>
+            <div>Myanmar</div>
+          </h4>
+        </div>
+        <div class="box">
+          <font class="newweb"><i></i>Let’s take care of each other, always!<i></i>
+          </font>
+        </div>
+        <div class="box ">I’m so lucky to have you in my life.🎉
+        </div>
+      </div>
+    </div>
+    <div class="foot">
+      <font><a href="./message/index.html" target="_self"><i></i>For You</a></font>
+      <font><a href="./Love/love.html" target="_self"><i></i>Love</a></font>
+      
+    </div>
+    <div class="main">
+      <div class="main-1">
+        <div class="box">
+          <img class="img" src="img/girl.jpg">
+           <div class="boxbox">
+    <center>
+      <font class="admin"><i></i>Chit Chit</font>
+    </center>
+  </div>
+        </div>
+      </div>
+      <div class="main-2">
+        <div class="box ju">
+          <h4>
+            <font class="zuobiao"><i></i>KutKai · Shan State</font>
+            <div>Myanmar</div>
+          </h4>
+        </div>
+        <div class="box">
+          <font class="newweb"><i></i>I’ll hold your hand through every storm.<i></i>
+          </font>
+        </div>
+        <div class="box">Let’s make the world jealous of our love🎉</div>
+      </div>
+    </div>
+
+    <div class="footer">
+
+      <a href=""><br><b>💞Let’s create memories only we understand💞</b><br> </a>
+    </div>
+    <audio autoplay>
+      <source src="https://api.uomg.com/api/rand.music?sort=热歌榜" type="audio/mpeg">
+    </audio>
+  <script src="js/pwa-install.js"></script>
+</body>
+
+</html>

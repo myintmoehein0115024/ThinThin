@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="manifest" href="../manifest.webmanifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Always yours">
+  <script>(function(){try{var t=Number(localStorage.getItem("thinthin_story_unlocked_at"));if(!Number.isFinite(t)||t<=0||(Date.now()-t)>=15*60*1000){localStorage.removeItem("thinthin_story_unlocked_at");window.location.replace("../index.html");}}catch(e){window.location.replace("../index.html");}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#eee7ff">
+  <title>A Little Secret, Just For Us ♡</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body class="love-entry-page">
+  <div class="ambient-glow ambient-glow-one" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-two" aria-hidden="true"></div>
+  <div class="entry-sparkles" aria-hidden="true">
+    <span>✦</span><span>♡</span><span>✧</span><span>♡</span><span>✦</span>
+  </div>
+  <div class="romantic-hearts" aria-hidden="true"></div>
+
+  <main class="love_div" aria-label="Our little secret">
+    <div class="love-card-ornament" aria-hidden="true">
+      <span>♡</span><i></i><span>♡</span>
+    </div>
+    <p class="love-card-kicker">FOR THE TWO OF US</p>
+    <h1 class="love-card-title">A little secret, just for us</h1>
+    <p class="love-card-subtitle">One tiny word opens a whole world of love.</p>
+    <div class="love-card-date">since <strong>20 · 03 · 2024</strong></div>
+
+    <form class="love-form" onsubmit="return false">
+      <label class="sr-only" for="love-secret">Our secret word</label>
+      <div class="love-form-row">
+        <input id="love-secret" type="password" name="love_text" class="love_text" placeholder="Type our little secret…" autocomplete="off" aria-label="Secret word">
+        <button type="button" class="love_btn">Open <span>♡</span></button>
+      </div>
+    </form>
+
+    <div class="love-card-hint"><span>made for Chit Chit</span><i></i><span>with all my love</span></div>
+  </main>
+
+  <audio id="bgm" preload="auto" loop playsinline src="Yar Tat Pan.mp3">
+    Your browser does not support this audio.
+  </audio>
+
+
+  <button id="music-control" class="love-music-control" type="button" aria-label="Pause song" aria-pressed="false">
+    <span class="music-control-icon">♫</span>
+    <span class="music-control-text">Pause Song</span>
+  </button>
+
+  <a href="../index.html" class="thinthin-return" aria-label="Back to M heart T">
+    <span class="thinthin-return-heart">♡</span>
+    <span>Back to M 💞 T</span>
+  </a>
+
+  <script src="js/jquery-1.2.6.min.js"></script>
+  <script src="js/snowfall.jquery.js"></script>
+  <script src="js/love.js"></script>
+  <script>
+    $(function(){
+      showFlower();
+      initImg();
+    });
+  </script>
+  <script src="../js/pwa-install.js"></script>
+</body>
+</html>

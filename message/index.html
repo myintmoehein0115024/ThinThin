@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="my">
+<head>
+  <link rel="manifest" href="../manifest.webmanifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Always yours">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#eeeaff">
+  <title>For You · Chit Chit</title>
+  <script>
+    (function(){
+      const k = 'thinthin_story_unlocked_at';
+      const ttl = 15 * 60 * 1000;
+      function read(store){
+        try { return Number(store.getItem(k)); } catch(e){ return NaN; }
+      }
+      function valid(t){ return Number.isFinite(t) && t > 0 && (Date.now() - t) < ttl; }
+      let t = read(localStorage);
+      if(!valid(t)) t = read(sessionStorage);
+      if(!valid(t) && sessionStorage.getItem('thinthin_story_unlocked') === '2024-03-20') {
+        t = Date.now();
+      }
+      if(valid(t)) {
+        try {
+          const value = String(t);
+          localStorage.setItem(k, value);
+          sessionStorage.setItem(k, value);
+          sessionStorage.setItem('thinthin_story_unlocked', '2024-03-20');
+        } catch(e) {}
+      } else {
+        try { localStorage.removeItem(k); sessionStorage.removeItem(k); } catch(e) {}
+        window.location.replace('../index.html');
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <span class="heart h1">♡</span><span class="heart h2">♡</span><span class="heart h3">♡</span>
+    <i class="bubble b1"></i><i class="bubble b2"></i><i class="bubble b3"></i><i class="bubble b4"></i>
+    <i class="bubble b5"></i><i class="bubble b6"></i><i class="bubble b7"></i><i class="bubble b8"></i>
+    <i class="bubble b9"></i><i class="bubble b10"></i>
+  </div>
+
+  <main class="page-shell">
+    <article class="letter-card">
+      <div class="card-heart" aria-hidden="true">♡</div>
+      <div class="eyebrow"><span class="eyebrow-heart">♡</span> A LITTLE LETTER, WRITTEN FOR YOU <span class="eyebrow-heart">♡</span></div>
+      <h1>ချစ်ဆုံးပူတူးလေးအတွက်</h1>
+      <div class="divider"><span>♥</span></div>
+
+      <section class="letter-body" aria-label="A love letter">
+        <p id="code" class="typewriter-source">အချစ်စစ်မှန်ရင် နှလုံးသားကို လိမ်လို့မရဘူးတဲ့..မလွမ်းနဲ့ပြောလည်း လွမ်းမှာပဲ..မချစ်နဲ့ပြောလည်း ချစ်မှာပဲ..တကယ်ကိုလည်း ချစ်ချစ်ပြောလိုက်တဲ့စကားလုံးတိုင်းကို မြတ်မြတ်နိုးနိုးနဲ့ချစ်တာ💞ချစ်ချစ်နဲ့အနေဝေးနေတဲ့အခိုက်အတန့်တွေမှာလည်း ချစ်ချစ်ကိုလွမ်းတဲ့ခံစားချက်အပြင် ဘာစကားမှ ရှာမရအောင် ပျောက်နေတတ်တယ်...........ကိုကို့နှလုံးသားရဲ့ စေညွှန်ရာဟာ ချစ်ချစ်ဖြစ်နေခဲ့တာတော့ ကိုယ့်အတွက် ဘုရားပေးတဲ့ဆုလာဘ်တစ်ပါးပေါ့..</p>
+        <p class="love-line">ရာသီတွေနှစ်တွေဘယ်လိုပြောင်းလဲပါစေ မပြောင်းလဲတဲ့ သစ္စာတရားနဲ့ သက်ဆုံးတိုင်ချစ်နေမယ် ကောင်မလေးရယ်...</p>
+        <p class="love-line">တစ်ခုပဲ..ချစ်ချစ်ဆုပ်ကိုင်ထားတဲ့ ကိုယ့်လက်ကို ဘယ်တော့မှ မလွှတ်လိုက်ပါနဲ့..ကိုယ်မင်းလက်ကိုဆွဲပီး ဟိုး... သံသရာဆုံးထိ အတူသွားကြတာပေါ့ ချစ်ဆုံးလေး💝</p>
+      </section>
+
+      <div class="love-mark" aria-hidden="true"><span>made with love</span><b>♡</b></div>
+
+      <div class="romance-note" aria-hidden="true"><span>♡</span><span>✦</span><span>♡</span><span>✧</span><span>♡</span></div>
+
+      <div class="signature">
+        <span>With all my love,</span>
+        <strong>ချစ်ချစ်ကိုကို</strong>
+        <span>♡ Always yours ♡</span>
+      </div>
+
+      <button id="wish-button" class="wish-button" type="button" aria-expanded="false">
+        <span class="wish-heart">♡</span>
+        <span>One little wish for us</span>
+      </button>
+
+      <div class="after-letter" aria-hidden="true"><span>♡</span><span>✦</span><span>♡</span></div>
+
+      <div id="wish-note" class="wish-note" hidden>
+        <span class="wish-label">P.S. · Just one little wish…</span>
+        <p>I hope I get to make little things like this for you for many, many years. ♡</p>
+        <strong>Still choosing you. Still loving you.</strong>
+      </div>
+
+      <div id="memory-thread" class="memory-thread" aria-label="Our little timeline">
+        <div class="memory-line" aria-hidden="true"></div>
+        <div class="memory-item">
+          <span class="memory-dot">♡</span>
+          <div><small>20 MARCH 2024</small><strong>The day our story began.</strong></div>
+        </div>
+        <div class="memory-item">
+          <span class="memory-dot">✦</span>
+          <div><small>23 AUGUST 2025</small><strong>A little world made for your 23rd birthday.</strong></div>
+        </div>
+        <div class="memory-ending">And somehow, my favorite part is still <em>us.</em> ♡</div>
+      </div>
+    </article>
+  </main>
+
+  <a href="../index.html" class="back-home" aria-label="Back to M heart T">
+    <span class="back-icon">♡</span><span>Back to M 💞 T</span>
+  </a>
+
+  <button id="music-toggle" class="music-toggle" type="button" aria-label="Stop music" aria-pressed="false">
+    <span class="music-icon">♫</span><span class="music-text">Stop Song</span>
+  </button>
+
+  <audio id="main-audio" preload="auto" loop playsinline>
+    <source src="../Love/Yar Tat Pan.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    (() => {
+      const audio = document.getElementById('main-audio');
+      const button = document.getElementById('music-toggle');
+      const text = button.querySelector('.music-text');
+      const paragraphs = [...document.querySelectorAll('.letter-body p')];
+      const romanceNote = document.querySelector('.romance-note');
+      const signature = document.querySelector('.signature');
+      const wishButton = document.getElementById('wish-button');
+      const wishNote = document.getElementById('wish-note');
+      const memoryThread = document.getElementById('memory-thread');
+
+      // The letter is written as one continuous love note: each paragraph
+      // appears after the previous one, instead of looking like separate blocks.
+      const originals = paragraphs.map(p => p.textContent.trim());
+      paragraphs.forEach(p => {
+        p.textContent = '';
+        p.classList.remove('typed', 'typing');
+      });
+      romanceNote.classList.remove('show');
+      signature.classList.remove('show');
+      memoryThread.classList.remove('show');
+
+      const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+      async function writeParagraph(el, value, speed) {
+        el.classList.add('typing');
+        for (let i = 0; i < value.length; i++) {
+          el.textContent += value[i];
+          // Slightly faster for spaces so Burmese text feels natural.
+          await sleep(value[i] === ' ' ? speed * .35 : speed);
+        }
+        el.classList.remove('typing');
+        el.classList.add('typed');
+      }
+
+      async function writeLetter() {
+        await sleep(650);
+        for (let i = 0; i < paragraphs.length; i++) {
+          await writeParagraph(paragraphs[i], originals[i], 30);
+          await sleep(i === paragraphs.length - 1 ? 260 : 520);
+        }
+        romanceNote.classList.add('show');
+        await sleep(450);
+        signature.classList.add('show');
+        await sleep(650);
+        wishButton.classList.add('show');
+      }
+      writeLetter();
+
+      wishButton.addEventListener('click', () => {
+        const open = wishButton.getAttribute('aria-expanded') === 'true';
+        wishButton.setAttribute('aria-expanded', String(!open));
+        wishNote.hidden = open;
+        wishButton.classList.toggle('opened', !open);
+        if (!open) {
+          requestAnimationFrame(() => {
+            wishNote.classList.add('show');
+            setTimeout(() => memoryThread.classList.add('show'), 420);
+          });
+        } else {
+          wishNote.classList.remove('show');
+          memoryThread.classList.remove('show');
+        }
+      });
+
+      function setState(playing){
+        button.classList.toggle('playing', playing);
+        button.setAttribute('aria-pressed', String(playing));
+        button.setAttribute('aria-label', playing ? 'Stop music' : 'Play music');
+        text.textContent = playing ? 'Stop Song' : 'Our Song';
+      }
+
+      async function startMusic(){
+        try { await audio.play(); setState(true); return true; }
+        catch(e){ setState(false); return false; }
+      }
+
+      function stopMusic(){
+        audio.pause();
+        try { audio.currentTime = 0; } catch(e) {}
+        setState(false);
+      }
+
+      button.addEventListener('click', async () => {
+        if(audio.paused) await startMusic();
+        else stopMusic();
+      });
+
+      ['pointerdown','touchstart','keydown'].forEach(evt => {
+        document.addEventListener(evt, () => {
+          if(audio.paused) startMusic();
+        }, {once:true, passive:true});
+      });
+
+      audio.addEventListener('play', () => setState(true));
+      audio.addEventListener('pause', () => setState(false));
+      audio.addEventListener('ended', () => setState(false));
+      window.addEventListener('load', () => startMusic());
+    })();
+  </script>
+  <script src="../js/pwa-install.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  /* Match the main ThinThin homepage background */
+  background: linear-gradient(180deg, #CBCFFC 0%, #FFFFFF 100%);
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+}
+
+body::before {
+  content: "♡   ✦   ♡";
+  position: fixed;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Georgia, serif;
+  font-size: 18px;
+  letter-spacing: 18px;
+  color: rgba(126, 136, 205, 0.22);
+  pointer-events: none;
+  z-index: 2;
+}
+
+body::after {
+  content: "♡";
+  position: fixed;
+  right: 8%;
+  bottom: 10%;
+  font-family: Georgia, serif;
+  font-size: 34px;
+  color: rgba(126, 136, 205, 0.18);
+  pointer-events: none;
+  animation: softFloat 4s ease-in-out infinite;
+  z-index: 2;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes softFloat {
+  0%, 100% { transform: translateY(0); opacity: .55; }
+  50% { transform: translateY(-8px); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after { animation: none; }
+}
