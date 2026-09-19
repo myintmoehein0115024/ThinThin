@@ -135,12 +135,22 @@ font.newweb i {
     line-height: 1.8;
     margin: 0 6px 0;
     vertical-align: middle;
+    background-image: url(../img/web.svg);
     background-size: 100%;
     width: 15px;
     height: 15px;
     display: inline-block
 }
 
+font.qq i {
+    line-height: 1.8;
+    vertical-align: middle;
+    background-image: url(../img/qq.svg);
+    background-size: 100%;
+    width: 20px;
+    height: 20px;
+    display: inline-block
+}
 
 font.admin i {
     line-height: 1.8;
@@ -154,7 +164,25 @@ font.admin i {
     margin-top: -2px
 }
 
+font.zfb i {
+    line-height: 1.8;
+    vertical-align: middle;
+    background-image: url(../img/zfb.svg);
+    background-size: 100%;
+    width: 20px;
+    height: 20px;
+    display: inline-block
+}
 
+font.github i {
+    line-height: 1.8;
+    vertical-align: middle;
+    background-image: url(../img/github.svg);
+    background-size: 100%;
+    width: 20px;
+    height: 20px;
+    display: inline-block
+}
 
 font.vx i {
     line-height: 1.8;
@@ -194,6 +222,16 @@ font.vx i {
     box-shadow: inset 2px 2px 3px #CBCFFC, inset -3px -3px 3px #FFF
 }
 
+.foot font i {
+    line-height: 1.8;
+    margin: -5px 6px 0;
+    vertical-align: middle;
+    background-image: url(../img/footweb.svg);
+    background-size: 100%;
+    width: 15px;
+    height: 15px;
+    display: inline-block
+}
 
 a {
     text-decoration: none;
@@ -754,6 +792,7 @@ font.newweb i {
   box-shadow: 0 4px 12px rgba(100,90,150,.07);
   white-space: nowrap;
 }
+.foot font i { width:15px; height:15px; background-size:contain; }
 .footer { width:auto !important; margin: 20px auto 8px !important; font-size: 10px; color:#817786; }
 .footer a, .footer a:link, .footer a:visited { color:#817786; }
 /* Hide the unused native audio element; the existing audio source/functionality is untouched. */
@@ -1211,6 +1250,13 @@ a:focus-visible {
   font-weight: 500;
   letter-spacing: .01em;
 }
+.foot font i {
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0 5px 0 0 !important;
+  opacity: .88;
+  transition: transform .28s ease;
+}
 .foot font:hover i { transform: translateY(-1px) scale(1.08); }
 .foot font:first-child::after {
   content: 'A little message for you';
@@ -1413,3 +1459,30 @@ body { min-height: 100svh; overflow-x: hidden; }
   .footer::before { margin-bottom: 5px; }
   .footer b { padding: 5px 10px; }
 }
+
+/* ===== Homepage V4 — compact bottom + responsive breathing room ===== */
+html, body { height: auto; min-height: 100%; }
+body { min-height: 100svh; }
+#content {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin-bottom: 0 !important;
+  padding-bottom: max(8px, env(safe-area-inset-bottom)) !important;
+}
+#content > .main { min-height: 0 !important; height: auto !important; }
+#content > .main .box { margin-top: 4px; margin-bottom: 7px; }
+#content > .foot { margin-bottom: 9px !important; }
+#content > .footer {
+  margin-top: 2px !important;
+  margin-bottom: max(6px, env(safe-area-inset-bottom)) !important;
+  padding: 8px 10px 4px !important;
+}
+#content > .footer a { padding: 3px 9px 4px !important; }
+@media (max-width: 600px) {
+  #content { width: min(94vw, 440px) !important; }
+  #content > .main { min-height: 0 !important; }
+  #content > .foot { margin-top: 8px !important; margin-bottom: 7px !important; }
+  #content > .footer { margin-top: 0 !important; padding-bottom: 3px !important; }
+}
+

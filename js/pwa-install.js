@@ -131,7 +131,7 @@
       const base = manifest ? new URL(manifest.href, document.baseURI) : new URL("./", document.baseURI);
       const swUrl = new URL("service-worker.js", base);
       const scope = new URL("./", base).href;
-      await navigator.serviceWorker.register(swUrl.href, { scope });
+      await navigator.serviceWorker.register(swUrl.href, { scope, updateViaCache: "none" });
     } catch (_) {}
   }
 
