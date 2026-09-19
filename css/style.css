@@ -1486,3 +1486,65 @@ body { min-height: 100svh; }
   #content > .footer { margin-top: 0 !important; padding-bottom: 3px !important; }
 }
 
+
+
+/* ===== Homepage V4.1 — compact romantic close ===== */
+#content > .main { margin-bottom: 0 !important; }
+#content > .main:last-of-type { margin-bottom: 0 !important; }
+#content > .footer {
+  width: min(88%, 420px) !important;
+  margin: 6px auto max(8px, env(safe-area-inset-bottom)) !important;
+  padding: 14px 16px 12px !important;
+  box-sizing: border-box;
+  border: 1px solid rgba(255,255,255,.82);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,228,246,.56), transparent 52%),
+    linear-gradient(145deg, rgba(255,255,255,.74), rgba(249,244,255,.58));
+  box-shadow:
+    0 14px 34px rgba(112, 89, 145, .08),
+    inset 0 1px 0 rgba(255,255,255,.96);
+  position: relative;
+  overflow: hidden;
+}
+#content > .footer::before {
+  content: '♡  ─────────  ♡  ─────────  ♡';
+  display: block;
+  margin: 0 auto 7px;
+  color: rgba(196,123,166,.55);
+  font: 12px/1 Georgia, serif;
+  letter-spacing: .05em;
+}
+#content > .footer::after {
+  content: 'Always yours · M 💞 T';
+  display: block;
+  margin-top: 7px;
+  color: rgba(128,112,137,.74);
+  font: 600 10px/1.4 "Segoe UI", system-ui, sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+#content > .footer a {
+  display: inline-block;
+  margin: 0 !important;
+  padding: 4px 12px 5px !important;
+  border-radius: 999px;
+  background: rgba(255,255,255,.52);
+  border: 1px solid rgba(255,255,255,.8);
+  color: #7c7183 !important;
+}
+#content > .footer b { font-size: 11px !important; }
+#content > .foot { margin-top: 8px !important; margin-bottom: 6px !important; }
+#content > .main .box { margin-bottom: 5px !important; }
+
+@media (max-width:600px) {
+  #content > .footer {
+    width: min(92%, 360px) !important;
+    margin-top: 4px !important;
+    padding: 12px 12px 10px !important;
+    border-radius: 20px;
+  }
+  #content > .footer::before { font-size: 11px; margin-bottom: 6px; }
+  #content > .footer::after { font-size: 9px; margin-top: 6px; }
+  #content > .footer b { font-size: 10px !important; padding: 5px 9px !important; }
+}
